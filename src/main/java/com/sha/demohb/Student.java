@@ -1,10 +1,19 @@
 package com.sha.demohb;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Student {
 
+	@Id
+	@Column(name = "student_id")
 	private int studentId;
+
 	private String name;
-	private String studentSubject;
+	@Column(name = "subject_name")
+	private String subjectName;
 
 	public int getStudentId() {
 		return studentId;
@@ -22,17 +31,17 @@ public class Student {
 		this.name = name;
 	}
 
-	public String getStudentSubject() {
-		return studentSubject;
+	public String getSubjectName() {
+		return subjectName;
 	}
 
-	public void setStudentSubject(String studentSubject) {
-		this.studentSubject = studentSubject;
+	public void setSubjectName(String subjectName) {
+		this.subjectName = subjectName;
 	}
 
 	@Override
 	public String toString() {
-		return "Student [studentId=" + studentId + ", name=" + name + ", studentSubject=" + studentSubject + "]";
+		return "Student [studentId=" + studentId + ", name=" + name + ", subjectName=" + subjectName + "]";
 	}
 
 }
