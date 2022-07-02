@@ -10,7 +10,8 @@ public class Main {
 	public static void main(String[] args) {
 
 		Student stu10 = new Student();
-		stu10.setName("Hesanya");
+		stu10.setStudentId(1);
+		stu10.setName("Shamali");
 		stu10.setSubjectName("English");
 
 		Configuration con = new Configuration().configure().addAnnotatedClass(Student.class);
