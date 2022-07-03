@@ -3,6 +3,7 @@ package com.sha.demohb;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class User {
@@ -12,6 +13,16 @@ public class User {
 	@Column(name = "name")
 	private String userName;
 	private int marks;
+	@OneToOne
+	private Laptop laptop;
+
+	public Laptop getLaptop() {
+		return laptop;
+	}
+
+	public void setLaptop(Laptop laptop) {
+		this.laptop = laptop;
+	}
 
 	public int getRoleNo() {
 		return roleNo;

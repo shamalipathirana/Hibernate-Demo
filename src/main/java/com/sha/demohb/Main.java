@@ -17,6 +17,7 @@ public class Main {
 	user.setRoleNo(1);
 	user.setUserName("Shamali");
 	user.setMarks(90);
+	user.setLaptop(lp);
 	
 	Configuration con = new Configuration().configure().addAnnotatedClass(User.class).addAnnotatedClass(Laptop.class);
 	SessionFactory sf = con.buildSessionFactory();
