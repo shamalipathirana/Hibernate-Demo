@@ -19,13 +19,18 @@ public class Main {
 	user.setMarks(90);
 	user.setLaptop(lp);
 	
-	Configuration con = new Configuration().configure().addAnnotatedClass(User.class).addAnnotatedClass(Laptop.class);
+	Subject sub = new Subject();
+	sub.setSubjectId(1);
+	sub.setSubjectName("English");
+	
+	Configuration con = new Configuration().configure().addAnnotatedClass(User.class).addAnnotatedClass(Laptop.class).addAnnotatedClass(Subject.class);
 	SessionFactory sf = con.buildSessionFactory();
 	Session session = sf.openSession();
 	
 	Transaction tx = session.beginTransaction();
 	session.save(lp);
 	session.save(user);
+	session.save(sub);
 	
 	//stu10 = (Student)session.get(Student.class,1);
 	
