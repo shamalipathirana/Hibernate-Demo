@@ -10,7 +10,7 @@ public class Student {
 	@Id
 	@Column(name = "student_id")
 	private int studentId;
-
+	//@Column(name = "student_name")
 	private String name;
 	@Column(name = "subject_name")
 	private String subjectName;
