@@ -8,30 +8,29 @@ import org.hibernate.cfg.Configuration;
 public class Main {
 
 	public static void main(String[] args) {
-		
-		StudentFullName sn = new StudentFullName();
-		sn.setfName("Dimuthu");
-		sn.setlName("Silva");
-		sn.setmName("Taruka");
+	
+	Laptop lp = new Laptop();
+	lp.setLid(101);
+	lp.setLname("Dell");
+	
+	User user = new User();
+	user.setRoleNo(1);
+	user.setUserName("Shamali");
+	user.setMarks(90);
+	
+	Configuration con = new Configuration().configure().addAnnotatedClass(User.class).addAnnotatedClass(Laptop.class);
+	SessionFactory sf = con.buildSessionFactory();
+	Session session = sf.openSession();
+	
+	Transaction tx = session.beginTransaction();
+	session.save(lp);
+	session.save(user);
+	
+	//stu10 = (Student)session.get(Student.class,1);
+	
+	tx.commit();
+	
+	
 
-		Student stu10 = new Student();
-		stu10.setStudentId(11);
-		stu10.setfName(sn);
-		stu10.setSubjectName("English");
-
-		Configuration con = new Configuration().configure().addAnnotatedClass(Student.class);
-		SessionFactory sf = con.buildSessionFactory();
-		Session session = sf.openSession();
-		
-		Transaction tx = session.beginTransaction();
-		session.save(stu10);
-		
-		//stu10 = (Student)session.get(Student.class,1);
-		
-		tx.commit();
-		
-		//System.out.println(stu10);
-
-	}
-
+}
 }
