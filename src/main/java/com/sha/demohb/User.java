@@ -1,8 +1,11 @@
 package com.sha.demohb;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -15,6 +18,17 @@ public class User {
 	private int marks;
 	@OneToOne
 	private Laptop laptop;
+
+	@OneToMany(mappedBy = "user")
+	private List<Subject> subjectList;
+
+	public List<Subject> getSubjectList() {
+		return subjectList;
+	}
+
+	public void setSubjectList(List<Subject> subjectList) {
+		this.subjectList = subjectList;
+	}
 
 	public Laptop getLaptop() {
 		return laptop;
