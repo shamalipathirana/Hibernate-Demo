@@ -1,5 +1,6 @@
 package com.sha.demohb;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -20,7 +21,7 @@ public class User {
 	private Laptop laptop;
 
 	@OneToMany(mappedBy = "user")
-	private List<Subject> subjectList;
+	private List<Subject> subjectList = new ArrayList<Subject>();
 
 	public List<Subject> getSubjectList() {
 		return subjectList;
