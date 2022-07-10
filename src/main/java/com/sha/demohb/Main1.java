@@ -19,7 +19,7 @@ public class Main1 {
 		stu10.setfName(sn);
 		stu10.setSubjectName("English");
 
-		Configuration con = new Configuration().configure().addAnnotatedClass(Student.class);
+		Configuration con = new Configuration().configure().addAnnotatedClass(Student.class).addAnnotatedClass(Employee.class);
 		SessionFactory sf = con.buildSessionFactory();
 		Session session = sf.openSession();
 		
@@ -31,6 +31,15 @@ public class Main1 {
 		tx.commit();
 		
 		//System.out.println(stu10);
+		
+		for(int i=0;i<=50;i++) {
+			
+			Employee emp = new Employee();
+			emp.setEmpId(1);
+			emp.setEmpName("Sarath Kumara");
+			session.save(emp);
+			
+		}
 
 	}
 
