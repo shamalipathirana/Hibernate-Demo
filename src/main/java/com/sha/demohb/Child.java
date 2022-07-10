@@ -1,6 +1,7 @@
 package com.sha.demohb;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -15,7 +16,7 @@ public class Child {
 	private String cName;
 	
 	@OneToMany(mappedBy = "child")
-	private List<Subject> subjectList = new ArrayList<Subject>();
+	private Collection<Subject> subjectList = new ArrayList<Subject>();
 	
 	public int getCid() {
 		return cid;
@@ -30,7 +31,7 @@ public class Child {
 		this.cName = cName;
 	}
 	
-	public List<Subject> getSubjectList() {
+	public Collection<Subject> getSubjectList() {
 		return subjectList;
 	}
 
