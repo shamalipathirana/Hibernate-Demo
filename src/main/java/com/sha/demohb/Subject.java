@@ -12,14 +12,14 @@ public class Subject {
 	private String SubjectName;
 
 	@ManyToOne
-	private User user;
+	private Child child;
 
-	public User getUser() {
-		return user;
+	public Child getChild() {
+		return child;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setChild(Child child) {
+		this.child = child;
 	}
 
 	public int getSubjectId() {

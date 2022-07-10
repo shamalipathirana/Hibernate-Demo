@@ -16,16 +16,21 @@ public class Main {
 		Subject sub = new Subject();
 		sub.setSubjectId(1);
 		sub.setSubjectName("English");
+		
+		Child child = new Child();
+		child.setCid(1);
+		child.setcName("Hiruni");
+		child.getSubjectList().add(sub);
 
 		User user = new User();
 		user.setRoleNo(1);
 		user.setUserName("Shamali");
 		user.setMarks(90);
 		user.setLaptop(lp);
-		user.getSubjectList().add(sub);
+		//user.getSubjectList().add(sub);
 
 		Configuration con = new Configuration().configure().addAnnotatedClass(User.class)
-				.addAnnotatedClass(Laptop.class).addAnnotatedClass(Subject.class);
+				.addAnnotatedClass(Laptop.class).addAnnotatedClass(Subject.class).addAnnotatedClass(Child.class);;
 		SessionFactory sf = con.buildSessionFactory();
 		Session session = sf.openSession();
 
@@ -33,6 +38,7 @@ public class Main {
 		session.save(lp);
 		session.save(user);
 		session.save(sub);
+		session.save(child);
 
 		// stu10 = (Student)session.get(Student.class,1);
 

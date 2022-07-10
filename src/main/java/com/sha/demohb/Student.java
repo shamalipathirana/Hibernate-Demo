@@ -15,7 +15,7 @@ public class Student {
 
 	private StudentFullName sName;
 
-	public StudentFullName getfName() {
+	public StudentFullName getsName() {
 		return sName;
 	}
 

@@ -20,17 +20,6 @@ public class User {
 	@OneToOne
 	private Laptop laptop;
 
-	@OneToMany(mappedBy = "user")
-	private List<Subject> subjectList = new ArrayList<Subject>();
-
-	public List<Subject> getSubjectList() {
-		return subjectList;
-	}
-
-	public void setSubjectList(List<Subject> subjectList) {
-		this.subjectList = subjectList;
-	}
-
 	public Laptop getLaptop() {
 		return laptop;
 	}
